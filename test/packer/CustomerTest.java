@@ -5,13 +5,10 @@
  */
 package packer;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.BeforeClass;
-import packer.Address;
-import packer.Coordinates;
-import packer.Customer;
-import packer.Depot;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -45,7 +42,7 @@ public class CustomerTest {
      */
     @Test
     public void testGetClosestAddressTo() {
-        // Maybe this should be broken int three tests.
+        // Maybe this should be broken into three tests.
         System.out.println("getClosestAddressTo");
         Customer testCustomer;
         

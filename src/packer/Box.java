@@ -5,8 +5,8 @@ package packer;
  * @author I.M.Bad
  */
 public class Box {
-    
-    
+
+
     private Manifest contents;
     private Customer customer;
     private Depot depot; 
@@ -22,8 +22,6 @@ public class Box {
             contents.addProduct(product, 1);
         }
     }
-    
-    
     
     public void addProduct(Product product, int quantity) {
         if (canFit(product,quantity)); {
@@ -42,6 +40,9 @@ public class Box {
         if (this.isFragile()) {
             label.append("FRAGILE\n");
         }
+        if ((this.getWeight()) >= 15) {
+            label.append("HEAVY\n");
+        }
         return label.toString();
     }
     
@@ -52,12 +53,6 @@ public class Box {
     public double getWeight() {
         return contents.getTotalWeight();
     }
-
-//    public void addProduct(Product product) {
-//        if (canFit(product)) {
-//            contents.addProduct(product, 1);
-//        }
-//    }
 
     public boolean canFit(Product p) {
         return p.getWeight() < 40;
